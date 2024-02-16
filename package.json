@@ -1,0 +1,24 @@
+{
+  "name": "node-sass-demo",
+  "version": "1.0.0",
+  "description": "Beyond basic demo to show how node sass works",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "sass": "node-sass src/scss/ -o src/css/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrueBurn/node-sass-demo.git"
+  },
+  "author": "TrueBurn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TrueBurn/node-sass-demo/issues"
+  },
+  "homepage": "https://github.com/TrueBurn/node-sass-demo#readme",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}

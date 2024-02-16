@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap");
+
+$numberOfBar: 5;
+$width: 6rem;
+$margin: 8rem;
+$maxHeight: 60rem;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #1e1f26;
+  font-size: 10px;
+  overflow-x: hidden;
+}
+
+header {
+  background: inherit;
+  width: 100vw;
+  z-index: 10;
+  position: fixed;
+}
+
+h1 {
+  color: white;
+  margin: 8vh 0 2vh;
+  font-size: 2.5rem;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  outline: 1px solid red;
+}
+
+//============================
+// Sound bar loading animation
+//============================
+.loading {
+  width: $numberOfBar * ($width + $margin) - $margin;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.15);
+
+  &__bar {
+    width: $width;
+    height: $width;
+    background: gray;
+    border-radius: 100vh;
+    position: absolute;
+    animation: scale 2s infinite;
+
+    @for $i from 1 through $numberOfBar {
+      &:nth-child(#{$i}) {
+        left: ($i - 1) * ($width + $margin);
+        animation-delay: 0.2s * $i;
+      }
+    }
+  }
+}
+
+@keyframes scale {
+  20% {
+    height: $maxHeight;
+    background: white;
+    transform: translateY(-50%);
+  }
+  70% {
+    height: $width;
+  }
+}
+
+//===============================
+// Walking dots loading animation
+//===============================
